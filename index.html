@@ -1,0 +1,2053 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LankaThreads | Premium Fashion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --black: #0f0f0f;
+      --matte-black: #1a1a1a;
+      --white: #ffffff;
+      --off-white: #f8f7f4;
+      --beige: #e8e4d9;
+      --beige-dark: #d4cfc0;
+      --gray: #6b6b6b;
+      --light-gray: #e5e5e5;
+      --accent: #c9a87c;
+      --sale: #b33a3a;
+      --shadow: 0 4px 20px rgba(0,0,0,0.08);
+      --shadow-lg: 0 10px 40px rgba(0,0,0,0.12);
+      --radius: 8px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--black);
+      background: var(--off-white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      font-family: inherit;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ========== ANNOUNCEMENT BAR ========== */
+    .announcement {
+      background: var(--matte-black);
+      color: var(--white);
+      text-align: center;
+      padding: 10px 16px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    .announcement span {
+      color: var(--accent);
+    }
+
+    /* ========== HEADER ========== */
+    .header {
+      background: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 1px 0 var(--light-gray);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+      gap: 24px;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: var(--black);
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--black);
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .nav a:hover {
+      color: var(--accent);
+    }
+
+    .nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1.5px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    .nav a:hover::after {
+      width: 100%;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .search-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .search-wrap input {
+      width: 180px;
+      padding: 9px 36px 9px 14px;
+      border: 1px solid var(--light-gray);
+      border-radius: 50px;
+      font-size: 13px;
+      background: var(--off-white);
+      transition: var(--transition);
+      outline: none;
+    }
+
+    .search-wrap input:focus {
+      border-color: var(--beige-dark);
+      width: 220px;
+    }
+
+    .search-wrap svg {
+      position: absolute;
+      right: 12px;
+      width: 16px;
+      height: 16px;
+      color: var(--gray);
+      pointer-events: none;
+    }
+
+    .icon-btn {
+      position: relative;
+      background: none;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: var(--transition);
+    }
+
+    .icon-btn:hover {
+      background: var(--off-white);
+    }
+
+    .icon-btn svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .badge {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      background: var(--black);
+      color: var(--white);
+      font-size: 10px;
+      font-weight: 600;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      width: 40px;
+      height: 40px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mobile-toggle svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      position: relative;
+      height: 85vh;
+      min-height: 520px;
+      max-height: 800px;
+      overflow: hidden;
+      background: var(--matte-black);
+    }
+
+    .hero-slides {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    .hero-slide.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .hero-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(15,15,15,0.75) 0%, rgba(15,15,15,0.3) 60%, transparent 100%);
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-text {
+      max-width: 560px;
+      color: var(--white);
+    }
+
+    .hero-text .tag {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .hero-text h1 {
+      font-size: clamp(36px, 5vw, 56px);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .hero-text p {
+      font-size: 16px;
+      opacity: 0.9;
+      margin-bottom: 32px;
+      max-width: 420px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 32px;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      border-radius: 4px;
+      transition: var(--transition);
+    }
+
+    .btn-primary {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    .btn-primary:hover {
+      background: var(--beige);
+      transform: translateY(-2px);
+    }
+
+    .btn-dark {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .btn-dark:hover {
+      background: var(--matte-black);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid var(--black);
+      color: var(--black);
+    }
+
+    .btn-outline:hover {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .hero-dots {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 4;
+      display: flex;
+      gap: 10px;
+    }
+
+    .hero-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.4);
+      border: none;
+      transition: var(--transition);
+    }
+
+    .hero-dot.active {
+      background: var(--white);
+      width: 28px;
+      border-radius: 5px;
+    }
+
+    /* ========== CATEGORIES ========== */
+    .section {
+      padding: 80px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(28px, 4vw, 36px);
+      margin-bottom: 12px;
+    }
+
+    .section-header p {
+      color: var(--gray);
+      font-size: 15px;
+    }
+
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+
+    .category-card {
+      position: relative;
+      height: 320px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .category-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .category-card:hover img {
+      transform: scale(1.08);
+    }
+
+    .category-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
+      display: flex;
+      align-items: flex-end;
+      padding: 24px;
+    }
+
+    .category-overlay h3 {
+      color: var(--white);
+      font-size: 18px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+    }
+
+    /* ========== PRODUCTS ========== */
+    .products-section {
+      background: var(--white);
+    }
+
+    .filters {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 10px 22px;
+      font-size: 13px;
+      font-weight: 500;
+      border-radius: 50px;
+      background: var(--off-white);
+      color: var(--black);
+      border: 1px solid transparent;
+      transition: var(--transition);
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+    }
+
+    .product-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: var(--transition);
+      border: 1px solid transparent;
+    }
+
+    .product-card:hover {
+      box-shadow: var(--shadow-lg);
+      border-color: var(--light-gray);
+    }
+
+    .product-image {
+      position: relative;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      background: var(--off-white);
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.05);
+    }
+
+    .wishlist-btn {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      z-index: 2;
+    }
+
+    .wishlist-btn:hover,
+    .wishlist-btn.active {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .wishlist-btn svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .sale-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: var(--sale);
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 4px;
+      z-index: 2;
+    }
+
+    .product-info {
+      padding: 16px;
+    }
+
+    .product-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .product-desc {
+      font-size: 13px;
+      color: var(--gray);
+      margin-bottom: 8px;
+    }
+
+    .product-rating {
+      font-size: 13px;
+      color: var(--gray);
+      margin-bottom: 10px;
+    }
+
+    .product-rating span {
+      color: #f5a623;
+    }
+
+    .product-price {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .product-price .old {
+      font-size: 13px;
+      color: var(--gray);
+      text-decoration: line-through;
+      font-weight: 400;
+      margin-left: 8px;
+    }
+
+    .size-selector {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+
+    .size-btn {
+      width: 36px;
+      height: 32px;
+      border: 1px solid var(--light-gray);
+      background: var(--white);
+      font-size: 12px;
+      font-weight: 500;
+      border-radius: 4px;
+      transition: var(--transition);
+    }
+
+    .size-btn:hover,
+    .size-btn.active {
+      border-color: var(--black);
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .add-to-cart {
+      width: 100%;
+      padding: 12px;
+      background: var(--black);
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 4px;
+      transition: var(--transition);
+    }
+
+    .add-to-cart:hover {
+      background: var(--matte-black);
+    }
+
+    .add-to-cart:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* ========== PROMO ========== */
+    .promo-section {
+      background: var(--matte-black);
+      color: var(--white);
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .promo-section h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      margin-bottom: 12px;
+    }
+
+    .promo-section p {
+      opacity: 0.8;
+      margin-bottom: 32px;
+      font-size: 16px;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+
+    .countdown-item {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius);
+      padding: 20px 28px;
+      min-width: 100px;
+    }
+
+    .countdown-item .num {
+      font-size: 36px;
+      font-weight: 700;
+      font-family: 'Playfair Display', serif;
+      display: block;
+      line-height: 1;
+    }
+
+    .countdown-item .label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0.7;
+      margin-top: 6px;
+    }
+
+    /* ========== TESTIMONIALS ========== */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .testimonial-card {
+      background: var(--white);
+      padding: 32px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--light-gray);
+    }
+
+    .testimonial-stars {
+      color: #f5a623;
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+
+    .testimonial-text {
+      font-size: 15px;
+      color: var(--gray);
+      margin-bottom: 24px;
+      line-height: 1.7;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .testimonial-author img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .testimonial-author h4 {
+      font-size: 15px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+    }
+
+    .testimonial-author span {
+      font-size: 13px;
+      color: var(--gray);
+    }
+
+    /* ========== FOOTER ========== */
+    .footer {
+      background: var(--matte-black);
+      color: var(--white);
+      padding: 64px 0 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      gap: 40px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .footer-brand .logo {
+      color: var(--white);
+      margin-bottom: 16px;
+      display: inline-block;
+    }
+
+    .footer-brand p {
+      font-size: 14px;
+      opacity: 0.7;
+      max-width: 280px;
+      margin-bottom: 20px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 12px;
+    }
+
+    .social-links a {
+      width: 36px;
+      height: 36px;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    .social-links svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .footer-col h4 {
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      opacity: 0.9;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 10px;
+    }
+
+    .footer-col a {
+      font-size: 14px;
+      opacity: 0.7;
+      transition: var(--transition);
+    }
+
+    .footer-col a:hover {
+      opacity: 1;
+      color: var(--accent);
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: 12px 16px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: transparent;
+      color: var(--white);
+      border-radius: 4px;
+      font-size: 13px;
+      outline: none;
+    }
+
+    .newsletter-form input::placeholder {
+      color: rgba(255,255,255,0.5);
+    }
+
+    .newsletter-form button {
+      padding: 12px 20px;
+      background: var(--white);
+      color: var(--black);
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 4px;
+      white-space: nowrap;
+      transition: var(--transition);
+    }
+
+    .newsletter-form button:hover {
+      background: var(--beige);
+    }
+
+    .footer-bottom {
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 13px;
+      opacity: 0.6;
+    }
+
+    .payment-icons {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .payment-icons span {
+      background: rgba(255,255,255,0.1);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    /* ========== CART DRAWER ========== */
+    .cart-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 2000;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+
+    .cart-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .cart-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      max-width: 420px;
+      height: 100%;
+      background: var(--white);
+      z-index: 2001;
+      transform: translateX(100%);
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cart-drawer.open {
+      transform: translateX(0);
+    }
+
+    .cart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--light-gray);
+    }
+
+    .cart-header h3 {
+      font-size: 18px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+    }
+
+    .cart-close {
+      background: none;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: var(--transition);
+    }
+
+    .cart-close:hover {
+      background: var(--off-white);
+    }
+
+    .cart-close svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .cart-items {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px 24px;
+    }
+
+    .cart-empty {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--gray);
+    }
+
+    .cart-empty svg {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 16px;
+      opacity: 0.4;
+    }
+
+    .cart-item {
+      display: flex;
+      gap: 16px;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--light-gray);
+    }
+
+    .cart-item img {
+      width: 80px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 4px;
+      background: var(--off-white);
+    }
+
+    .cart-item-info {
+      flex: 1;
+    }
+
+    .cart-item-info h4 {
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .cart-item-info .size {
+      font-size: 12px;
+      color: var(--gray);
+      margin-bottom: 8px;
+    }
+
+    .cart-item-info .price {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .cart-qty {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .cart-qty button {
+      width: 28px;
+      height: 28px;
+      border: 1px solid var(--light-gray);
+      background: var(--white);
+      border-radius: 4px;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cart-qty span {
+      font-size: 13px;
+      min-width: 20px;
+      text-align: center;
+    }
+
+    .cart-item-remove {
+      background: none;
+      color: var(--gray);
+      font-size: 12px;
+      margin-top: 8px;
+      transition: var(--transition);
+    }
+
+    .cart-item-remove:hover {
+      color: var(--sale);
+    }
+
+    .cart-footer {
+      padding: 20px 24px;
+      border-top: 1px solid var(--light-gray);
+    }
+
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .cart-footer .btn {
+      width: 100%;
+    }
+
+    /* ========== MOBILE NAV ========== */
+    .mobile-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      max-width: 320px;
+      height: 100%;
+      background: var(--white);
+      z-index: 2001;
+      transform: translateX(-100%);
+      transition: transform 0.35s ease;
+      padding: 24px;
+      overflow-y: auto;
+    }
+
+    .mobile-nav.open {
+      transform: translateX(0);
+    }
+
+    .mobile-nav-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 32px;
+    }
+
+    .mobile-nav ul {
+      list-style: none;
+    }
+
+    .mobile-nav li {
+      margin-bottom: 4px;
+    }
+
+    .mobile-nav a {
+      display: block;
+      padding: 12px 0;
+      font-size: 16px;
+      font-weight: 500;
+      border-bottom: 1px solid var(--light-gray);
+    }
+
+    /* ========== TOAST ========== */
+    .toast {
+      position: fixed;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--black);
+      color: var(--white);
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 500;
+      z-index: 3000;
+      opacity: 0;
+      transition: all 0.4s ease;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 1100px) {
+      .categories-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .nav {
+        display: none;
+      }
+      .search-wrap {
+        display: none;
+      }
+      .mobile-toggle {
+        display: flex;
+      }
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+      .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .category-card:last-child {
+        grid-column: span 2;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .header-inner {
+        height: 60px;
+      }
+      .logo {
+        font-size: 22px;
+      }
+      .hero {
+        height: 70vh;
+        min-height: 420px;
+      }
+      .section {
+        padding: 56px 0;
+      }
+      .categories-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      .category-card {
+        height: 200px;
+      }
+      .products-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      .product-info {
+        padding: 12px;
+      }
+      .size-selector {
+        flex-wrap: wrap;
+      }
+      .countdown {
+        gap: 10px;
+      }
+      .countdown-item {
+        padding: 14px 16px;
+        min-width: 70px;
+      }
+      .countdown-item .num {
+        font-size: 24px;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+      .cart-drawer {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement">
+    Free Island-wide Delivery on orders over <span>LKR 10,000</span> · Use code <span>LANKA10</span> for 10% off
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+
+      <a href="#" class="logo">Lanka<span>Threads</span></a>
+
+      <nav>
+        <ul class="nav">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#shop">Shop</a></li>
+          <li><a href="#shop" data-filter="men">Men</a></li>
+          <li><a href="#shop" data-filter="women">Women</a></li>
+          <li><a href="#shop">New Arrivals</a></li>
+          <li><a href="#promo">Sale</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <div class="search-wrap">
+          <input type="text" placeholder="Search products..." id="searchInput" />
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </div>
+        <button class="icon-btn" id="wishlistBtn" aria-label="Wishlist">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span class="badge" id="wishlistCount">0</span>
+        </button>
+        <button class="icon-btn" id="cartBtn" aria-label="Cart">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="badge" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav -->
+  <div class="cart-overlay" id="mobileOverlay"></div>
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <a href="#" class="logo">Lanka<span>Threads</span></a>
+      <button class="cart-close" id="mobileClose">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#shop">Shop</a></li>
+      <li><a href="#shop" data-filter="men">Men</a></li>
+      <li><a href="#shop" data-filter="women">Women</a></li>
+      <li><a href="#shop">New Arrivals</a></li>
+      <li><a href="#promo">Sale</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-slides">
+      <div class="hero-slide active">
+        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1600&q=80" alt="Fashion collection" />
+      </div>
+      <div class="hero-slide">
+        <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1600&q=80" alt="Elegant wear" />
+      </div>
+      <div class="hero-slide">
+        <img src="https://images.unsplash.com/photo-1441984904996-e0b241d2c9f0?w=1600&q=80" alt="Street style" />
+      </div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="container">
+        <div class="hero-text">
+          <span class="tag">New Season 2026</span>
+          <h1>Elevate Your Everyday Style</h1>
+          <p>Discover premium Sri Lankan-inspired fashion crafted with modern elegance. Timeless pieces for the contemporary wardrobe.</p>
+          <a href="#shop" class="btn btn-primary">Explore Collection</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-dots">
+      <button class="hero-dot active" data-slide="0"></button>
+      <button class="hero-dot" data-slide="1"></button>
+      <button class="hero-dot" data-slide="2"></button>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="section" id="categories">
+    <div class="container">
+      <div class="section-header">
+        <h2>Shop by Category</h2>
+        <p>Curated collections for every occasion</p>
+      </div>
+      <div class="categories-grid">
+        <div class="category-card" data-filter="women">
+          <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&q=80" alt="Women's Wear" />
+          <div class="category-overlay"><h3>Women's Wear</h3></div>
+        </div>
+        <div class="category-card" data-filter="men">
+          <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&q=80" alt="Men's Wear" />
+          <div class="category-overlay"><h3>Men's Wear</h3></div>
+        </div>
+        <div class="category-card" data-filter="all">
+          <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=600&q=80" alt="Casual Streetwear" />
+          <div class="category-overlay"><h3>Casual Streetwear</h3></div>
+        </div>
+        <div class="category-card" data-filter="all">
+          <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=600&q=80" alt="Formal & Office" />
+          <div class="category-overlay"><h3>Formal & Office</h3></div>
+        </div>
+        <div class="category-card" data-filter="all">
+          <img src="https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?w=600&q=80" alt="Accessories" />
+          <div class="category-overlay"><h3>Accessories</h3></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="section products-section" id="shop">
+    <div class="container">
+      <div class="section-header">
+        <h2>Featured Collection</h2>
+        <p>Handpicked pieces for the modern wardrobe</p>
+      </div>
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="men">Men</button>
+        <button class="filter-btn" data-filter="women">Women</button>
+        <button class="filter-btn" data-filter="sale">Sale</button>
+      </div>
+      <div class="products-grid" id="productsGrid">
+        <!-- Products injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Promo / Countdown -->
+  <section class="promo-section" id="promo">
+    <div class="container">
+      <h2>Season Clearance Sale</h2>
+      <p>Up to 40% off selected styles — limited time only</p>
+      <div class="countdown" id="countdown">
+        <div class="countdown-item"><span class="num" id="days">00</span><span class="label">Days</span></div>
+        <div class="countdown-item"><span class="num" id="hours">00</span><span class="label">Hours</span></div>
+        <div class="countdown-item"><span class="num" id="mins">00</span><span class="label">Mins</span></div>
+        <div class="countdown-item"><span class="num" id="secs">00</span><span class="label">Secs</span></div>
+      </div>
+      <a href="#shop" class="btn btn-primary" data-filter="sale">Shop the Sale</a>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <h2>What Our Customers Say</h2>
+        <p>Trusted by fashion lovers across Sri Lanka</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"The quality of the linen shirts is exceptional. Fast island-wide delivery and beautiful packaging. LankaThreads has become my go-to for premium everyday wear."</p>
+          <div class="testimonial-author">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Nimali" />
+            <div>
+              <h4>Nimali Fernando</h4>
+              <span>Colombo</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"I ordered the formal blazer and it fits perfectly. The fabric feels luxurious and the tailoring is spot on. Highly recommend for office and special occasions."</p>
+          <div class="testimonial-author">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="Kasun" />
+            <div>
+              <h4>Kasun Perera</h4>
+              <span>Kandy</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Love the casual streetwear collection! Stylish, comfortable, and the prices are fair for the quality. Customer service was also very helpful with sizing."</p>
+          <div class="testimonial-author">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt="Tharushi" />
+            <div>
+              <h4>Tharushi Silva</h4>
+              <span>Galle</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo">Lanka<span>Threads</span></a>
+          <p>Premium fashion rooted in Sri Lankan craftsmanship. Modern silhouettes, timeless quality.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+            <a href="#" aria-label="Facebook"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+            <a href="#" aria-label="Twitter"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#shop">Shop All</a></li>
+            <li><a href="#shop">New Arrivals</a></li>
+            <li><a href="#promo">Sale</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Customer Care</h4>
+          <ul>
+            <li><a href="#">Shipping & Delivery</a></li>
+            <li><a href="#">Returns & Exchanges</a></li>
+            <li><a href="#">Size Guide</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Track Order</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Newsletter</h4>
+          <p style="font-size:14px;opacity:0.7;margin-bottom:12px;">Subscribe for 10% off your first order</p>
+          <form class="newsletter-form" id="newsletterForm">
+            <input type="email" placeholder="Your email" required />
+            <button type="submit">Subscribe</button>
+          </form>
+          <p style="font-size:13px;opacity:0.6;margin-top:16px;">Support: +94 11 234 5678<br/>hello@lankathreads.lk</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 LankaThreads. All rights reserved.</p>
+        <div class="payment-icons">
+          <span>VISA</span>
+          <span>Mastercard</span>
+          <span>PayHere</span>
+          <span>Cash on Delivery</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Drawer -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3>Your Cart (<span id="cartDrawerCount">0</span>)</h3>
+      <button class="cart-close" id="cartClose" aria-label="Close cart">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty" id="cartEmpty">
+        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <p>Your cart is empty</p>
+      </div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none;">
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cartTotal">LKR 0</span>
+      </div>
+      <button class="btn btn-dark" id="checkoutBtn">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script>
+    // ========== PRODUCT DATA ==========
+    const products = [
+      {
+        id: 1,
+        title: "Classic Linen Shirt",
+        desc: "Breathable pure linen, relaxed fit",
+        price: 5800,
+        oldPrice: null,
+        category: "men",
+        sale: false,
+        rating: 4.8,
+        image: "https://images.unsplash.com/photo-1596755094514-f87e34085b85?w=600&q=80",
+        sizes: ["S", "M", "L", "XL"]
+      },
+      {
+        id: 2,
+        title: "Silk Blend Blouse",
+        desc: "Elegant drape with subtle sheen",
+        price: 7200,
+        oldPrice: 9500,
+        category: "women",
+        sale: true,
+        rating: 4.9,
+        image: "https://images.unsplash.com/photo-1564257631407-4deb1f99d992?w=600&q=80",
+        sizes: ["S", "M", "L"]
+      },
+      {
+        id: 3,
+        title: "Tailored Wool Blazer",
+        desc: "Structured shoulders, modern cut",
+        price: 14500,
+        oldPrice: null,
+        category: "men",
+        sale: false,
+        rating: 4.7,
+        image: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=600&q=80",
+        sizes: ["M", "L", "XL"]
+      },
+      {
+        id: 4,
+        title: "Floral Midi Dress",
+        desc: "Soft cotton, flattering silhouette",
+        price: 8900,
+        oldPrice: 12000,
+        category: "women",
+        sale: true,
+        rating: 4.9,
+        image: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=600&q=80",
+        sizes: ["S", "M", "L", "XL"]
+      },
+      {
+        id: 5,
+        title: "Relaxed Chino Trousers",
+        desc: "Stretch cotton, everyday essential",
+        price: 4900,
+        oldPrice: null,
+        category: "men",
+        sale: false,
+        rating: 4.6,
+        image: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=600&q=80",
+        sizes: ["S", "M", "L", "XL"]
+      },
+      {
+        id: 6,
+        title: "Cashmere Knit Sweater",
+        desc: "Ultra-soft, lightweight layering",
+        price: 9800,
+        oldPrice: 13500,
+        category: "women",
+        sale: true,
+        rating: 5.0,
+        image: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=600&q=80",
+        sizes: ["S", "M", "L"]
+      },
+      {
+        id: 7,
+        title: "Oxford Button-Down",
+        desc: "Crisp cotton, versatile staple",
+        price: 5500,
+        oldPrice: null,
+        category: "men",
+        sale: false,
+        rating: 4.7,
+        image: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=600&q=80",
+        sizes: ["S", "M", "L", "XL"]
+      },
+      {
+        id: 8,
+        title: "Wide-Leg Trousers",
+        desc: "High-rise, fluid movement",
+        price: 6800,
+        oldPrice: null,
+        category: "women",
+        sale: false,
+        rating: 4.8,
+        image: "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=600&q=80",
+        sizes: ["S", "M", "L"]
+      },
+      {
+        id: 9,
+        title: "Structured Tote Bag",
+        desc: "Premium vegan leather, spacious",
+        price: 6200,
+        oldPrice: 8500,
+        category: "women",
+        sale: true,
+        rating: 4.5,
+        image: "https://images.unsplash.com/photo-1590874103328-eac38a67437a?w=600&q=80",
+        sizes: ["One Size"]
+      },
+      {
+        id: 10,
+        title: "Slim Denim Jeans",
+        desc: "Stretch denim, classic indigo",
+        price: 7500,
+        oldPrice: null,
+        category: "men",
+        sale: false,
+        rating: 4.6,
+        image: "https://images.unsplash.com/photo-1542272604-787c3835535d?w=600&q=80",
+        sizes: ["S", "M", "L", "XL"]
+      },
+      {
+        id: 11,
+        title: "Satin Slip Skirt",
+        desc: "Bias-cut, elegant evening wear",
+        price: 5400,
+        oldPrice: 7200,
+        category: "women",
+        sale: true,
+        rating: 4.8,
+        image: "https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=600&q=80",
+        sizes: ["S", "M", "L"]
+      },
+      {
+        id: 12,
+        title: "Merino Wool Polo",
+        desc: "Fine gauge, refined casual",
+        price: 6900,
+        oldPrice: null,
+        category: "men",
+        sale: false,
+        rating: 4.7,
+        image: "https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?w=600&q=80",
+        sizes: ["S", "M", "L", "XL"]
+      }
+    ];
+
+    // ========== STATE ==========
+    let cart = JSON.parse(localStorage.getItem('lt_cart') || '[]');
+    let wishlist = JSON.parse(localStorage.getItem('lt_wishlist') || '[]');
+    let selectedSizes = {};
+    let currentFilter = 'all';
+
+    // ========== RENDER PRODUCTS ==========
+    function renderProducts(filter = 'all') {
+      currentFilter = filter;
+      const grid = document.getElementById('productsGrid');
+      let filtered = products;
+
+      if (filter === 'men') filtered = products.filter(p => p.category === 'men');
+      else if (filter === 'women') filtered = products.filter(p => p.category === 'women');
+      else if (filter === 'sale') filtered = products.filter(p => p.sale);
+
+      grid.innerHTML = filtered.map(p => {
+        const inWishlist = wishlist.includes(p.id);
+        const sizesHtml = p.sizes.map(s =>
+          `<button class="size-btn ${selectedSizes[p.id] === s ? 'active' : ''}" data-id="${p.id}" data-size="${s}">${s}</button>`
+        ).join('');
+
+        return `
+          <div class="product-card" data-id="${p.id}" data-category="${p.category}">
+            <div class="product-image">
+              ${p.sale ? '<span class="sale-badge">SALE</span>' : ''}
+              <button class="wishlist-btn ${inWishlist ? 'active' : ''}" data-id="${p.id}" aria-label="Wishlist">
+                <svg fill="${inWishlist ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </button>
+              <img src="${p.image}" alt="${p.title}" loading="lazy" />
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">${p.title}</h3>
+              <p class="product-desc">${p.desc}</p>
+              <div class="product-rating"><span>★</span> ${p.rating}</div>
+              <div class="product-price">
+                LKR ${p.price.toLocaleString()}
+                ${p.oldPrice ? `<span class="old">LKR ${p.oldPrice.toLocaleString()}</span>` : ''}
+              </div>
+              <div class="size-selector">${sizesHtml}</div>
+              <button class="add-to-cart" data-id="${p.id}">Add to Cart</button>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      // Size selection
+      grid.querySelectorAll('.size-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = parseInt(btn.dataset.id);
+          const size = btn.dataset.size;
+          selectedSizes[id] = size;
+          btn.parentElement.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+        });
+      });
+
+      // Wishlist
+      grid.querySelectorAll('.wishlist-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const id = parseInt(btn.dataset.id);
+          toggleWishlist(id);
+        });
+      });
+
+      // Add to cart
+      grid.querySelectorAll('.add-to-cart').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = parseInt(btn.dataset.id);
+          const product = products.find(p => p.id === id);
+          const size = selectedSizes[id] || product.sizes[0];
+          addToCart(product, size);
+        });
+      });
+    }
+
+    // ========== CART ==========
+    function addToCart(product, size) {
+      const existing = cart.find(i => i.id === product.id && i.size === size);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({
+          id: product.id,
+          title: product.title,
+          price: product.price,
+          image: product.image,
+          size,
+          qty: 1
+        });
+      }
+      saveCart();
+      updateCartUI();
+      showToast(`${product.title} (${size}) added to cart`);
+    }
+
+    function removeFromCart(id, size) {
+      cart = cart.filter(i => !(i.id === id && i.size === size));
+      saveCart();
+      updateCartUI();
+    }
+
+    function updateQty(id, size, delta) {
+      const item = cart.find(i => i.id === id && i.size === size);
+      if (!item) return;
+      item.qty += delta;
+      if (item.qty <= 0) removeFromCart(id, size);
+      else {
+        saveCart();
+        updateCartUI();
+      }
+    }
+
+    function saveCart() {
+      localStorage.setItem('lt_cart', JSON.stringify(cart));
+    }
+
+    function updateCartUI() {
+      const count = cart.reduce((s, i) => s + i.qty, 0);
+      document.getElementById('cartCount').textContent = count;
+      document.getElementById('cartDrawerCount').textContent = count;
+
+      const itemsEl = document.getElementById('cartItems');
+      const emptyEl = document.getElementById('cartEmpty');
+      const footerEl = document.getElementById('cartFooter');
+
+      if (cart.length === 0) {
+        itemsEl.innerHTML = `
+          <div class="cart-empty" id="cartEmpty">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <p>Your cart is empty</p>
+          </div>`;
+        footerEl.style.display = 'none';
+        return;
+      }
+
+      footerEl.style.display = 'block';
+      const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+      document.getElementById('cartTotal').textContent = `LKR ${total.toLocaleString()}`;
+
+      itemsEl.innerHTML = cart.map(item => `
+        <div class="cart-item">
+          <img src="${item.image}" alt="${item.title}" />
+          <div class="cart-item-info">
+            <h4>${item.title}</h4>
+            <div class="size">Size: ${item.size}</div>
+            <div class="price">LKR ${item.price.toLocaleString()}</div>
+            <div class="cart-qty">
+              <button data-action="dec" data-id="${item.id}" data-size="${item.size}">−</button>
+              <span>${item.qty}</span>
+              <button data-action="inc" data-id="${item.id}" data-size="${item.size}">+</button>
+            </div>
+            <button class="cart-item-remove" data-id="${item.id}" data-size="${item.size}">Remove</button>
+          </div>
+        </div>
+      `).join('');
+
+      itemsEl.querySelectorAll('[data-action]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = parseInt(btn.dataset.id);
+          const size = btn.dataset.size;
+          updateQty(id, size, btn.dataset.action === 'inc' ? 1 : -1);
+        });
+      });
+
+      itemsEl.querySelectorAll('.cart-item-remove').forEach(btn => {
+        btn.addEventListener('click', () => {
+          removeFromCart(parseInt(btn.dataset.id), btn.dataset.size);
+        });
+      });
+    }
+
+    // ========== WISHLIST ==========
+    function toggleWishlist(id) {
+      const idx = wishlist.indexOf(id);
+      if (idx > -1) wishlist.splice(idx, 1);
+      else wishlist.push(id);
+      localStorage.setItem('lt_wishlist', JSON.stringify(wishlist));
+      document.getElementById('wishlistCount').textContent = wishlist.length;
+      renderProducts(currentFilter);
+      showToast(idx > -1 ? 'Removed from wishlist' : 'Added to wishlist');
+    }
+
+    // ========== CART DRAWER ==========
+    function openCart() {
+      document.getElementById('cartDrawer').classList.add('open');
+      document.getElementById('cartOverlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCart() {
+      document.getElementById('cartDrawer').classList.remove('open');
+      document.getElementById('cartOverlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // ========== MOBILE NAV ==========
+    function openMobile() {
+      document.getElementById('mobileNav').classList.add('open');
+      document.getElementById('mobileOverlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobile() {
+      document.getElementById('mobileNav').classList.remove('open');
+      document.getElementById('mobileOverlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // ========== HERO SLIDER ==========
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.hero-dot');
+
+    function goToSlide(n) {
+      slides[currentSlide].classList.remove('active');
+      dots[currentSlide].classList.remove('active');
+      currentSlide = n;
+      slides[currentSlide].classList.add('active');
+      dots[currentSlide].classList.add('active');
+    }
+
+    function nextSlide() {
+      goToSlide((currentSlide + 1) % slides.length);
+    }
+
+    setInterval(nextSlide, 5000);
+
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => goToSlide(parseInt(dot.dataset.slide)));
+    });
+
+    // ========== COUNTDOWN ==========
+    function updateCountdown() {
+      // End of next month as example
+      const now = new Date();
+      const end = new Date(now.getFullYear(), now.getMonth() + 1, 0, 23, 59, 59);
+      const diff = end - now;
+
+      if (diff <= 0) {
+        document.getElementById('days').textContent = '00';
+        document.getElementById('hours').textContent = '00';
+        document.getElementById('mins').textContent = '00';
+        document.getElementById('secs').textContent = '00';
+        return;
+      }
+
+      const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById('days').textContent = String(d).padStart(2, '0');
+      document.getElementById('hours').textContent = String(h).padStart(2, '0');
+      document.getElementById('mins').textContent = String(m).padStart(2, '0');
+      document.getElementById('secs').textContent = String(s).padStart(2, '0');
+    }
+
+    // ========== TOAST ==========
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+
+    // ========== FILTERS ==========
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        renderProducts(btn.dataset.filter);
+      });
+    });
+
+    // Category cards & nav links with data-filter
+    document.querySelectorAll('[data-filter]').forEach(el => {
+      el.addEventListener('click', (e) => {
+        const filter = el.dataset.filter;
+        if (filter) {
+          document.querySelectorAll('.filter-btn').forEach(b => {
+            b.classList.toggle('active', b.dataset.filter === filter);
+          });
+          renderProducts(filter);
+          closeMobile();
+        }
+      });
+    });
+
+    // ========== SEARCH ==========
+    document.getElementById('searchInput').addEventListener('input', (e) => {
+      const q = e.target.value.toLowerCase().trim();
+      if (!q) {
+        renderProducts(currentFilter);
+        return;
+      }
+      const grid = document.getElementById('productsGrid');
+      const filtered = products.filter(p =>
+        p.title.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q)
+      );
+      // Simple re-render for search
+      currentFilter = 'all';
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      document.querySelector('.filter-btn[data-filter="all"]').classList.add('active');
+      
+      grid.innerHTML = filtered.length ? filtered.map(p => {
+        const inWishlist = wishlist.includes(p.id);
+        const sizesHtml = p.sizes.map(s =>
+          `<button class="size-btn ${selectedSizes[p.id] === s ? 'active' : ''}" data-id="${p.id}" data-size="${s}">${s}</button>`
+        ).join('');
+        return `
+          <div class="product-card" data-id="${p.id}">
+            <div class="product-image">
+              ${p.sale ? '<span class="sale-badge">SALE</span>' : ''}
+              <button class="wishlist-btn ${inWishlist ? 'active' : ''}" data-id="${p.id}">
+                <svg fill="${inWishlist ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </button>
+              <img src="${p.image}" alt="${p.title}" loading="lazy" />
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">${p.title}</h3>
+              <p class="product-desc">${p.desc}</p>
+              <div class="product-rating"><span>★</span> ${p.rating}</div>
+              <div class="product-price">LKR ${p.price.toLocaleString()}${p.oldPrice ? `<span class="old">LKR ${p.oldPrice.toLocaleString()}</span>` : ''}</div>
+              <div class="size-selector">${sizesHtml}</div>
+              <button class="add-to-cart" data-id="${p.id}">Add to Cart</button>
+            </div>
+          </div>
+        `;
+      }).join('') : '<p style="grid-column:1/-1;text-align:center;padding:40px;color:#6b6b6b;">No products found</p>';
+
+      // Re-bind events (simplified)
+      grid.querySelectorAll('.size-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = parseInt(btn.dataset.id);
+          selectedSizes[id] = btn.dataset.size;
+          btn.parentElement.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+        });
+      });
+      grid.querySelectorAll('.wishlist-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          toggleWishlist(parseInt(btn.dataset.id));
+        });
+      });
+      grid.querySelectorAll('.add-to-cart').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = parseInt(btn.dataset.id);
+          const product = products.find(p => p.id === id);
+          addToCart(product, selectedSizes[id] || product.sizes[0]);
+        });
+      });
+    });
+
+    // ========== EVENT LISTENERS ==========
+    document.getElementById('cartBtn').addEventListener('click', openCart);
+    document.getElementById('cartClose').addEventListener('click', closeCart);
+    document.getElementById('cartOverlay').addEventListener('click', closeCart);
+
+    document.getElementById('mobileToggle').addEventListener('click', openMobile);
+    document.getElementById('mobileClose').addEventListener('click', closeMobile);
+    document.getElementById('mobileOverlay').addEventListener('click', closeMobile);
+
+    document.getElementById('checkoutBtn').addEventListener('click', () => {
+      showToast('Checkout coming soon! Thank you for shopping with LankaThreads.');
+      closeCart();
+    });
+
+    document.getElementById('newsletterForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      showToast('Thanks for subscribing! 10% off code sent to your email.');
+      e.target.reset();
+    });
+
+    document.getElementById('wishlistBtn').addEventListener('click', () => {
+      showToast(wishlist.length ? `You have ${wishlist.length} item(s) in wishlist` : 'Wishlist is empty');
+    });
+
+    // ========== INIT ==========
+    renderProducts();
+    updateCartUI();
+    document.getElementById('wishlistCount').textContent = wishlist.length;
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
